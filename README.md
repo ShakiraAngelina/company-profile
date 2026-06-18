@@ -1,59 +1,171 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<img src="public/assets/images/logo.png" alt="Arkonin Logo" width="180"/>
 
-## About Laravel
+# Company Profile — PT. Arkonin Engineering Manggala Pratama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**A modern, bilingual corporate website built with Laravel**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📋 About This Project
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This is a **full-stack corporate profile website** developed for PT. Arkonin Engineering Manggala Pratama — an Indonesian engineering consultancy firm. The website serves as the company's digital presence, showcasing their expertise, projects, insights, and career opportunities.
 
-## Laravel Sponsors
+Built during my role as **Database & Web Development Officer** at PT. Arkonin (Oct 2025 – Feb 2026).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## ✨ Features
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- 🌐 **Bilingual Support** — Full Indonesian & English language toggle
+- 🎠 **Hero Slider** — Dynamic image carousel on the homepage
+- 📰 **Insights / News** — Admin-managed articles and publications
+- 💼 **Careers** — Job listing with application form
+- 📁 **Projects Portfolio** — Showcase of engineering projects
+- 📬 **Contact Form** — Message submission with admin notification
+- 🔐 **Admin Panel** — Secure dashboard to manage all content
+- 📱 **Responsive Design** — Optimized for desktop and mobile
+- ☁️ **Cloud-ready** — Integrated with cloud database infrastructure
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🛠️ Tech Stack
 
-## Code of Conduct
+| Layer | Technology |
+|:---|:---|
+| Backend Framework | Laravel 11 |
+| Language | PHP 8.x |
+| Database | MySQL |
+| Frontend | Blade Templates, HTML5, CSS3, JavaScript |
+| Package Manager | Composer, NPM |
+| Local Server | Laragon |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## ⚙️ Installation & Setup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Prerequisites
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js & NPM
+- Laragon (recommended) or XAMPP
 
-## License
+### Steps
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**1. Clone the repository**
+```bash
+git clone https://github.com/ShakiraAngelina/company-profile.git
+cd company-profile
+```
+
+**2. Install PHP dependencies**
+```bash
+composer install
+```
+
+**3. Install JS dependencies**
+```bash
+npm install
+```
+
+**4. Setup environment file**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+**5. Configure database**
+
+Edit `.env` file and update:
+```env
+DB_DATABASE=company_profile
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+**6. Run migrations**
+```bash
+php artisan migrate
+```
+
+**7. Run the application**
+```bash
+php artisan serve
+```
+
+Open your browser at `http://localhost:8000` or `http://company-profile.test` (Laragon)
+
+---
+
+## 📁 Project Structure
+
+```
+company-profile/
+├── app/
+│   ├── Http/Controllers/    # AdminAuth, Careers, Contact, Insights, etc.
+│   ├── Models/              # Application, Career, News, Project, Publication, etc.
+│   └── Observers/           # Model activity tracking
+├── database/
+│   ├── migrations/          # Database schema
+│   └── schema.sql           # Full SQL dump
+├── public/
+│   ├── assets/
+│   │   ├── CSS/             # Page-specific stylesheets
+│   │   ├── JS/              # Page-specific scripts
+│   │   ├── images/          # Company images & assets
+│   │   └── i18n/            # Language files (en.json, id.json)
+├── resources/
+│   └── views/               # Blade templates (about, careers, contact, admin, etc.)
+└── routes/
+    └── web.php              # Application routes
+```
+
+---
+
+## 🔐 Admin Panel
+
+The website includes a secure admin dashboard accessible at:
+```
+http://localhost:8000/admin
+```
+
+Admin can manage:
+- 📰 News & Publications
+- 💼 Career Listings
+- 📁 Projects
+- 💬 Contact Messages & Applications
+- 🔔 Notifications
+
+---
+
+## 👩‍💻 Developer
+
+<div align="center">
+
+**Shakira Angelina Ika Putri**
+*Database & Web Development Officer*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shakiraangelinaikaputri)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ShakiraAngelina)
+[![Portfolio](https://img.shields.io/badge/Portfolio-e94560?style=flat-square&logo=googlechrome&logoColor=white)](https://bit.ly/Portofolio_Shakira)
+
+</div>
+
+---
+
+<div align="center">
+
+*Built with ❤️ for PT. Arkonin Engineering Manggala Pratama*
+
+</div>
