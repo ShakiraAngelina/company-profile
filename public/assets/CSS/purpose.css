@@ -1,0 +1,504 @@
+/* =============================
+   PURPOSE PAGE - GenZ Professional
+   ============================= */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #222;
+  overflow-x: hidden;
+  padding-top: 70px; /* offset header fixed agar konten tidak tertutup */
+}
+
+/* ======== HEADER / NAVBAR ======== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff; /* selaras dengan navbar global */
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo img {
+  height: 45px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links > a,
+.dropdown > a {
+  color: #1a1a1a; /* link gelap seperti halaman About */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  padding: 25px 0;
+}
+
+.nav-links > a:hover,
+.dropdown > a:hover,
+.nav-links > a.active,
+.dropdown > a.active {
+  color: #111;
+}
+
+.nav-links > a.active::after,
+.dropdown > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #a8d5ba;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Language Selector */
+.language-selector .language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-selector svg {
+  width: 18px;
+  height: 18px;
+}
+
+.current-lang {
+  font-weight: 600;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff; /* dropdown putih konsisten */
+  min-width: 320px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  padding: 20px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  margin-top: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 30px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0,0,0,0.04);
+  color: #111;
+  padding-left: 35px;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+  min-width: 200px;
+  right: 0;
+  left: auto;
+}
+
+.lang-option {
+  padding: 12px 25px !important;
+}
+
+.lang-option.active {
+  background: rgba(168, 213, 186, 0.15);
+  color: #a8d5ba;
+  font-weight: 600;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+}
+
+.search-btn {
+  background: #006a7a;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #005262;
+}
+
+/* Search Dropdown (below navbar) */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 450px;
+  background: #003d5c;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.search-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  font-size: 15px;
+  border: 2px solid rgba(168, 213, 186, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #a8d5ba;
+  background: white;
+}
+
+.search-input::placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+.close-search-dropdown {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  transition: all 0.3s ease;
+  padding: 0 8px;
+}
+
+.close-search-dropdown:hover {
+  color: #001f3f;
+  transform: rotate(90deg);
+}
+
+/* ===== HERO SECTION ===== */
+.purpose-hero {
+  position: relative;
+  height: 80vh;
+  background: url('../images/purpose-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.purpose-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 31, 63, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content .subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #a8d5ba;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ===== PURPOSE SECTION ===== */
+.purpose-section {
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fdfdfd;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 106, 122, 0.15);
+}
+
+.card h2 {
+  border-left: 5px solid #00b4d8;
+  padding-left: 15px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.card p,
+.card li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00b4d8;
+  font-weight: 600;
+}
+
+/* ===== CTA SECTION ===== */
+.purpose-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #001f3f, #004e7a);
+  color: white;
+  padding: 100px 20px;
+}
+
+.purpose-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #a8d5ba;
+}
+
+.purpose-cta p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #a8d5ba;
+  color: #001f3f;
+  padding: 12px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #8fc5a6;
+  transform: translateY(-3px);
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background: #001f3f;
+  color: #fff;
+  padding: 60px 60px 30px;
+}
+
+.footer-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.footer-left h4,
+.footer-right h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #a8d5ba;
+}
+
+.footer-map iframe {
+  border-radius: 8px;
+  filter: grayscale(30%);
+}
+
+.footer-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+
+.footer-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.footer-cert {
+  height: 60px;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #006a7a;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  opacity: 0.7;
+}

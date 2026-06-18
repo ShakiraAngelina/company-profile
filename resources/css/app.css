@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Typography */
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Brand palette (available as bg-brand, text-brand, etc.) */
+    --color-brand: #0ea5e9;         /* sky-500 */
+    --color-brand-600: #0284c7;     /* sky-600 */
+    --color-brand-700: #0369a1;     /* sky-700 */
+    --color-accent: #22c55e;        /* green-500 */
+    --color-muted: #64748b;         /* slate-500 */
+    --color-surface: #ffffff;
+
+    /* Spacing shortcuts for layout harmony */
+    --spacing-page-x: 1rem;         /* px-4 on mobile */
+    --spacing-page-x-md: 1.5rem;    /* md:px-6 */
+    --spacing-page-x-lg: 2rem;      /* lg:px-8 */
+
+    /* Radii */
+    --radius-card: 0.75rem;         /* rounded-xl */
+    --radius-pill: 9999px;          /* rounded-full */
+}

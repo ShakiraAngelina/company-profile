@@ -1,0 +1,175 @@
+/* ===== History Page Styles ===== */
+:root {
+  --bg-gradient-start: #0b1f33;
+  --bg-gradient-end: #1f3b57;
+  --text-primary: #0e2a47;
+  --text-secondary: #446e8e;
+  --white: #ffffff;
+  --muted: #6b89a5;
+  --line: #d7e2ea;
+  --accent: #2fa4ff;
+}
+
+html, body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text-primary);
+}
+
+/* ===== Hero ===== */
+.history-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 48vh;
+  padding: 56px 20px;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  overflow: hidden;
+}
+
+.history-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1000px 400px at 10% 10%, rgba(255,255,255,0.08), transparent 60%),
+              radial-gradient(800px 300px at 90% 20%, rgba(255,255,255,0.06), transparent 60%);
+}
+
+.history-hero .hero-content {
+  position: relative;
+  max-width: 1000px;
+  text-align: center;
+  color: var(--white);
+  /* Turunkan konten hero sedikit agar tidak terlalu ke atas */
+  padding-top: 20px;
+}
+
+.history-hero h1 {
+  font-weight: 600;
+  font-size: clamp(28px, 4.5vw, 44px);
+  margin: 0 0 10px 0;
+}
+
+.history-hero p {
+  font-weight: 300;
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: #e8f1f7;
+  margin: 0;
+}
+
+/* ===== Section & Container ===== */
+.history-section {
+  padding: 56px 20px 80px;
+  background: #f8fbfd;
+}
+
+.history-section .container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.history-section h2 {
+  font-weight: 600;
+  font-size: clamp(22px, 3.4vw, 30px);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.history-section .subtitle {
+  color: var(--muted);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* ===== Timeline ===== */
+/* ===== Timeline ===== */
+.timeline {
+  position: relative;
+  margin: 24px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-1px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 18px 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 420ms ease, transform 520ms ease;
+}
+
+.timeline-item.in-view { opacity: 1; transform: translateY(0); }
+
+.timeline-dot {
+  position: absolute;
+  left: calc(50% - 9px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(47,164,255,0.12);
+}
+
+.timeline-dot.pulse { animation: pulse 2200ms ease-in-out infinite; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(47,164,255,0.26); }
+  70% { box-shadow: 0 0 0 12px rgba(47,164,255,0.0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,164,255,0.0); }
+}
+
+.timeline-content {
+  background: #fff;
+  border: 1px solid #e6eef4;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 14px rgba(9,30,66,0.06);
+}
+
+.timeline-item.left .timeline-content { grid-column: 1; }
+.timeline-item.right .timeline-content { grid-column: 2; }
+
+.timeline-content.current { border-color: var(--accent); box-shadow: 0 6px 18px rgba(47,164,255,0.18); }
+
+.timeline-content h3 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #4a6378;
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content { grid-column: 1; }
+}
+
+/* iPad tweaks: keep timeline centered and consistent spacing */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .history-section { padding-left: clamp(16px, 3vw, 24px); padding-right: clamp(16px, 3vw, 24px); }
+  .timeline-item { gap: 24px; padding: 18px 0; }
+  .timeline::before { left: 50%; }
+  .timeline-dot { left: calc(50% - 9px); }
+}
+
+/* Logo mengikuti penyesuaian global di style.css */
